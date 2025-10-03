@@ -3,7 +3,7 @@
 This repository contains the implementation of the paper:
 “A Two-Stage Deep Learning Framework for Atrial Fibrillation Prediction Using RR Interval-Based Embeddings.”
 
-verview
+# Overview
 
 We propose a lightweight two-stage deep learning model for early atrial fibrillation (AF) prediction using RR interval (RRI) embeddings.
 
