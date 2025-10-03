@@ -14,7 +14,11 @@ Stage 2: Integrates features over longer horizons (up to 1 hour before AF onset)
 Designed for computational efficiency, making it suitable for real-time and wearable applications.
 
 # Datasets
+
 Due to size constraints, datasets are not included in this repository.
+
 All data used in this work is publicly available online (e.g., MIT-BIH AFDB, CinC Challenge datasets, etc.).
+
 Input: RR Interval time series
-Label: Binary (pre-AF, NSR)
+
+Label: Binary Classification (pre-AF vs NSR)
