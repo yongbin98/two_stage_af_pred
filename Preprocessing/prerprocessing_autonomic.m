@@ -5,7 +5,7 @@ clc;
 folderPath = fullfile(pwd, 'data_preprocessed','autonomic/');
 files = dir(fullfile(folderPath, '*.mat')); % Adjust '*.mat' based on your file type
 
-for i = 366:length(files)
+for i = 1:length(files)
     filePath = fullfile(folderPath, files(i).name);
     
     data = load(filePath);
@@ -47,4 +47,5 @@ for i = 366:length(files)
     
     close all;
     clearvars -except folderPath files i
+
 end
