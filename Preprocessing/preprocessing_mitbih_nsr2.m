@@ -27,28 +27,12 @@ for i = 1:length(files)
         
             rPeak_10min = data.rri(data.rri > ST & data.rri < ED);
             rri = diff(rPeak_10min/fs);
-            falseIdx = [find(rri>5), find(rri<0.2)];
-            for idxFalse = 1:length(falseIdx)
-                currentFalse = falseIdx(idxFalse) - idxFalse+1;
-                rPeak_10min(currentFalse+1:end) = rPeak_10min(currentFalse+1:end)-diff(rPeak_10min(currentFalse:currentFalse+1));
-                rPeak_10min(currentFalse+1) = [];
-                rri(currentFalse) = [];
-            end
             HR = 60./rri;
             HR_diff = diff(HR);
         
             fs_hrv = 1;
             hrtime = linspace(rPeak_10min(2), rPeak_10min(end), 600)';
             rri = spline(rPeak_10min(2:end), rri, hrtime);  
-
-            plot(rri);
-            falseIdx = [find(rri>5); find(rri<0.2)];
-            if(~isempty(falseIdx))
-                validIdx = find(rri <= 5 & rri >= 0.2);
-                meanValid = mean(rri(validIdx));
-                rri(falseIdx) = meanValid;
-            end
-            % plot(rri);
     
             save_rri(end+1,:) = rri;
         end
@@ -67,3 +51,4 @@ for i = 1:length(files)
     clearvars -except folderPath files i
 
 end
+
